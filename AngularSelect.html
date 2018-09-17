@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<p>Select a car:</p>
+
+<select ng-model="selectedCar"  ng-options="y.brand for (x, y) in cars">
+</select>
+
+<select ng-model="selectedColor" ng-show="selectedCar" ng-options="x for x in selectedCar.color">
+</select>
+
+<h1>You selected: {{selectedCar.brand}}</h1>
+<h2>Model: {{selectedCar.model}}</h2>
+<h3>Color: {{selectedColor}}</h3>
+
+<p>The visible text inside the dropdown list can also be a property of the value object.</p>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.cars = {
+        car01 : {brand : "Ford", model : "Mustang", color : ["red","black"]},
+        car02 : {brand : "Fiat", model : "500", color : "white"},
+        car03 : {brand : "Volvo", model : "XC90", color : "black"}
+    }
+});
+</script>
+
+</body>
+</html>
