@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Provider</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
+    <script src="script/script14.js"></script>
+</head>
+
+<body ng-app="demo">
+    <div ng-controller="demo1">
+        {{name}}
+        <hr> Search data:<input type="text" ng-model="search">
+        <hr>
+        <button ng-click="getData()">getdata</button>
+        <table border="1">
+            <thead>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>City</th>
+                <th>Zip</th>
+                <th>DOB</th>
+                <th>Salary</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="e in employees | filter : search">
+                    <td>{{$index + 1}}</td>
+                    <td>{{e[0] | uppercase}}</td>
+                    <td>{{e[1] | uppercase}}</td>
+                    <td>{{e[2] | uppercase}}</td>
+                    <td>{{e[3]}}</td>
+                    <td>{{e[4] | date:"dd/mm/yyyy"}}</td>
+                    <td>{{e[5]}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

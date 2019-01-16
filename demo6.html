@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>scope inheritance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
+</head>
+
+<body ng-app="demo">
+    <div ng-controller="demo1">
+        {{name}} {{getSal()}}
+        <hr>
+        <div ng-controller="demo2">
+            {{name}} {{getSal()}}
+        </div>
+        <hr>
+    </div>
+
+
+
+
+    <div>
+        <p>$0 for highligting element .</p>
+        <p>angular.element($0).scope();</p>
+        <p>angular.element($0).scope().$digest();</p>
+    </div>
+</body>
+<script>
+    var demo = angular.module('demo', []);
+    demo.controller('demo1', ['$scope', function(c) {
+        c.name = "sumit";
+        c.getSal = function() {
+            return 4000;
+        };
+    }]);
+    demo.controller('demo2', ['$scope', function(c) {
+        c.name = "sam";
+        c.getSal = function() {
+            return 5000;
+        };
+    }]);
+</script>
+
+</html>

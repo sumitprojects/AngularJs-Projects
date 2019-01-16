@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ng bind</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
+    <!-- <script src="script/d01.js"></script> -->
+    <script src="script/d02.js"></script>
+</head>
+
+<body ng-app="demo">
+    <div ng-controller="demo1">
+        <p>
+            value1 = {{value1}}
+        </p>
+        <hr>
+        <p ng-bind="value1"></p>
+        <p>{{sum}}</p>
+        <button ng-click="square()">Square</button>
+        <p>get initial value = >{{::value1}}</p>
+    </div>
+</body>
+
+</html>

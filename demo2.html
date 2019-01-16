@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>controller</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
+</head>
+
+<body ng-app="demo">
+    <div ng-controller="demo1 as d">
+        {{d.name}}
+    </div>
+
+</body>
+<script>
+    var demo = angular.module('demo', []);
+    demo.controller('demo1', function() {
+        var demo = this;
+        demo.name = "sumit";
+    });
+</script>
+
+</html>
